@@ -13,7 +13,6 @@ In this project, we build a SaaS platform using **Next.js** with a focus on impl
 - Build a clean monorepo architecture for a full-stack application
 - Implement fine-grained permissioning logic with **RBAC** and **ABAC**
 - Optimize build and dev time using TurboRepo
-- Adjust ESLint and Prettier settings to be compatible with **ESLint v9 Flat Config**
 
 ### Roles
 

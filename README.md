@@ -1,12 +1,17 @@
-# NextSaaS RBAC
+# Next SaaS RBAC
 
-In this project, we build a SaaS platform using **Next.js** with a focus on implementing **role-based (RBAC)** and **attribute-based (ABAC)** access control models.
+This project is part of the **Rocketseat course**, where we build a complete SaaS application using modern technologies with a focus on permission management.
 
-## 🧱 Stack Overview
+## 🚀 What we are building
 
-- **Frontend**: [Next.js 14](https://nextjs.org/) with **Server Components** and **Server Actions**
-- **Backend**: [Node.js](https://nodejs.org/), [Fastify](https://fastify.dev/), [Prisma](https://www.prisma.io/)
-- **Monorepo**: Managed using [TurboRepo](https://turbo.build/repo) to coordinate backend and frontend together
+In this project, we are creating a SaaS platform using **Next.js 14**, applying important concepts like **RBAC (Role-Based Access Control)** and **ABAC (Attribute-Based Access Control)**.
+
+## 🔧 Technologies Used
+
+- **Frontend**: Next.js 14 with App Router, Server Components, and Server Actions
+- **Backend**: Node.js with Fastify and Prisma
+- **Monorepo management**: TurboRepo
+- **Package manager**: pnpm
 
 ## 🚀 Goals
 
@@ -14,7 +19,7 @@ In this project, we build a SaaS platform using **Next.js** with a focus on impl
 - Implement fine-grained permissioning logic with **RBAC** and **ABAC**
 - Optimize build and dev time using TurboRepo
 
-## Roles
+## 👨‍💼 Roles
 
 - Owner (count as administrator)
 - Administrator
@@ -22,7 +27,7 @@ In this project, we build a SaaS platform using **Next.js** with a focus on impl
 - Billing (one per organization)
 - Anonymous
 
-## Permissions table
+## 📋 Permissions table
 
 |                          | Administrator | Member | Billing | Anonymous |
 | ------------------------ | ------------- | ------ | ------- | --------- |

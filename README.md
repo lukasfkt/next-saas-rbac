@@ -2,10 +2,6 @@
 
 This project is part of the **Rocketseat course**, where we build a complete SaaS application using modern technologies with a focus on permission management.
 
-## 🚀 What we are building
-
-In this project, we are creating a SaaS platform using **Next.js 14**, applying important concepts like **RBAC (Role-Based Access Control)** and **ABAC (Attribute-Based Access Control)**.
-
 ## 🔧 Technologies Used
 
 - **Frontend**: Next.js 14 with App Router, Server Components, and Server Actions

@@ -14,7 +14,7 @@ In this project, we build a SaaS platform using **Next.js** with a focus on impl
 - Implement fine-grained permissioning logic with **RBAC** and **ABAC**
 - Optimize build and dev time using TurboRepo
 
-### Roles
+## Roles
 
 - Owner (count as administrator)
 - Administrator
@@ -22,7 +22,7 @@ In this project, we build a SaaS platform using **Next.js** with a focus on impl
 - Billing (one per organization)
 - Anonymous
 
-### Permissions table
+## Permissions table
 
 |                          | Administrator | Member | Billing | Anonymous |
 | ------------------------ | ------------- | ------ | ------- | --------- |

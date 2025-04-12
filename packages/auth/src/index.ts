@@ -5,14 +5,14 @@ import {
   AbilityBuilder,
 } from '@casl/ability'
 
-import {z} from "zod";
+import { z } from 'zod'
 import type { User } from './models/user'
 import { permissions } from './permissions'
 import { userSubject } from './subjects/user'
 import { projectSubject } from './subjects/project'
-import { organizationSubject } from './subjects/organization';
-import { inviteSubject } from './subjects/invite';
-import { billingSubject } from './subjects/billing';
+import { organizationSubject } from './subjects/organization'
+import { inviteSubject } from './subjects/invite'
+import { billingSubject } from './subjects/billing'
 
 const appAbilitiesSchema = z.union([
   projectSubject,
@@ -21,7 +21,7 @@ const appAbilitiesSchema = z.union([
   inviteSubject,
   billingSubject,
 
-  z.tuple([z.literal('manage'), z.literal('all')])
+  z.tuple([z.literal('manage'), z.literal('all')]),
 ])
 
 type AppAbilities = z.infer<typeof appAbilitiesSchema>
@@ -38,7 +38,11 @@ export function defineAbilityFor(user: User) {
 
   permissions[user.role](user, builder)
 
-  const ability = builder.build()
+  const ability = builder.build({
+    detectSubjectType: (subject) => {
+      return subject.__typename
+    },
+  })
 
   return ability
 }

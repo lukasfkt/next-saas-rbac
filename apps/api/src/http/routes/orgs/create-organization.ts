@@ -12,10 +12,10 @@ export async function createOrganization(app: FastifyInstance) {
     .withTypeProvider<ZodTypeProvider>()
     .register(auth)
     .post(
-      '/organization',
+      '/organizations',
       {
         schema: {
-          tags: ['organization'],
+          tags: ['organizations'],
           summary: 'Create a new organization',
           security: [
             {

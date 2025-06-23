@@ -24,6 +24,11 @@ import { getOrganization } from './routes/orgs/get-organization'
 import { getOrganizations } from './routes/orgs/get-organizations'
 import { shutDownOrganization } from './routes/orgs/shutdown-organization'
 import { updateOrganization } from './routes/orgs/update-organization'
+import { createProject } from './routes/projects/create-project'
+import { deleteProject } from './routes/projects/delete-project'
+import { getProject } from './routes/projects/get-project'
+import { getProjects } from './routes/projects/get-projects'
+import { updateProject } from './routes/projects/update-project'
 
 const app = fastify().withTypeProvider<ZodTypeProvider>()
 
@@ -74,6 +79,11 @@ app.register(getOrganization)
 app.register(getOrganizations)
 app.register(updateOrganization)
 app.register(shutDownOrganization)
+app.register(createProject)
+app.register(deleteProject)
+app.register(getProject)
+app.register(getProjects)
+app.register(updateProject)
 
 app
   .listen({

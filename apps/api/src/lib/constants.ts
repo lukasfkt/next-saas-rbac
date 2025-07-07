@@ -1,0 +1,4 @@
+export enum ORGANIZATION_BILLING {
+  SEATS = 10,
+  PROJECTS = 20,
+}

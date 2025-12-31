@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { getCurrentOrg } from '@/auth/auth'
 import { getOrganizations } from '@/http/get-organizations'
 
-import { Avatar, AvatarFallback, AvatarImage } from './avatar'
+import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,7 +13,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from './dropdown-menu'
+} from './ui/dropdown-menu'
 
 export async function OrganizationSwitcher() {
   const currentOrg = await getCurrentOrg()
@@ -25,7 +25,7 @@ export async function OrganizationSwitcher() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="focus-visible:ring-primary flex w-[168px] items-center gap-1 rounded p-1 text-sm font-medium outline-none focus-visible:ring-2">
+      <DropdownMenuTrigger className="focus-visible:ring-primary flex w-[168px] items-center gap-1 rounded p-1 text-sm font-medium outline-none focus-visible:ring-2 max-md:w-[108px] max-md:text-xs">
         {currentOrganization ? (
           <>
             <Avatar className="size-4 max-w-4">
@@ -42,7 +42,7 @@ export async function OrganizationSwitcher() {
         ) : (
           <span className="text-muted-foreground">Select organization</span>
         )}
-        <ChevronsUpDown className="text-muted-foreground ml-auto size-4" />
+        <ChevronsUpDown className="text-muted-foreground ml-auto size-4 shrink-0 max-md:size-3" />
       </DropdownMenuTrigger>
 
       <DropdownMenuContent

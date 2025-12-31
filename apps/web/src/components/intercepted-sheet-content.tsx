@@ -7,7 +7,7 @@ import * as React from 'react'
 
 import { cn } from '@/lib/utils'
 
-import { SheetOverlay, SheetPortal } from './sheet'
+import { SheetOverlay, SheetPortal } from './ui/sheet'
 
 export function InterceptedSheetContent({
   className,

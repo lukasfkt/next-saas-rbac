@@ -7,7 +7,7 @@ import { useParams } from 'next/navigation'
 
 import { getProjects } from '@/http/get-projects'
 
-import { Avatar, AvatarFallback, AvatarImage } from './avatar'
+import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,8 +16,8 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from './dropdown-menu'
-import { Skeleton } from './skeleton'
+} from './ui/dropdown-menu'
+import { Skeleton } from './ui/skeleton'
 
 export function ProjectSwitcher() {
   const { slug: orgSlug, project: projectSlug } = useParams<{
@@ -39,7 +39,7 @@ export function ProjectSwitcher() {
     <DropdownMenu>
       <DropdownMenuTrigger
         disabled={isLoading}
-        className="focus-visible:ring-primary flex w-[168px] items-center gap-1 rounded p-1 text-sm font-medium outline-none focus-visible:ring-2"
+        className="focus-visible:ring-primary flex w-[168px] items-center gap-1 rounded p-1 text-sm font-medium outline-none focus-visible:ring-2 max-md:w-[108px] max-md:text-xs"
       >
         {isLoading ? (
           <>
@@ -66,7 +66,7 @@ export function ProjectSwitcher() {
             )}
           </>
         )}
-        <ChevronsUpDown className="text-muted-foreground ml-auto size-4 shrink-0" />
+        <ChevronsUpDown className="text-muted-foreground ml-auto size-4 shrink-0 max-md:size-3" />
       </DropdownMenuTrigger>
 
       <DropdownMenuContent

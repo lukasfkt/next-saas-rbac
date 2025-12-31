@@ -27,20 +27,22 @@ export async function getInvites(app: FastifyInstance) {
             slug: z.string(),
           }),
           response: {
-            200: z.array(
-              z.object({
-                id: z.string().uuid(),
-                email: z.string().email(),
-                role: roleSchema,
-                createdAt: z.date(),
-                author: z
-                  .object({
-                    id: z.string().uuid(),
-                    name: z.string().nullable(),
-                  })
-                  .nullable(),
-              }),
-            ),
+            200: z.object({
+              invites: z.array(
+                z.object({
+                  id: z.string().uuid(),
+                  email: z.string().email(),
+                  role: roleSchema,
+                  createdAt: z.date(),
+                  author: z
+                    .object({
+                      id: z.string().uuid(),
+                      name: z.string().nullable(),
+                    })
+                    .nullable(),
+                }),
+              ),
+            }),
           },
         },
       },
@@ -79,7 +81,7 @@ export async function getInvites(app: FastifyInstance) {
           },
         })
 
-        return reply.send(invites)
+        return reply.send({ invites })
       },
     )
 }

@@ -103,13 +103,39 @@ export async function revokeInviteAction(inviteId: string) {
   const currentOrg = await getCurrentOrg()
 
   if (!currentOrg) {
-    return
+    return {
+      success: false,
+      message: 'Organization not found.',
+      errors: null,
+    }
   }
 
-  await revokeInvite({
-    org: currentOrg,
-    inviteId,
-  })
+  try {
+    await revokeInvite({
+      org: currentOrg,
+      inviteId,
+    })
 
-  revalidateTag(`${currentOrg}/invites`)
+    revalidateTag(`${currentOrg}/invites`)
+  } catch (err) {
+    if (err instanceof HTTPError) {
+      const { message } = await err.response.json()
+
+      return { success: false, message, errors: null }
+    }
+
+    console.error(err)
+
+    return {
+      success: false,
+      message: 'Unexpected error, try again in a few minutes.',
+      errors: null,
+    }
+  }
+
+  return {
+    success: true,
+    message: 'Successfully revoked the invite.',
+    errors: null,
+  }
 }

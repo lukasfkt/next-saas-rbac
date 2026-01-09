@@ -27,8 +27,11 @@ export default async function InvitePage({ params }: InvitePageProps) {
 
   if (!invite) {
     return (
-      <div className="flex min-h-screen flex-col items-center justify-center px-4">
+      <div className="flex min-h-screen flex-col items-center justify-center space-y-4 px-4">
         <p>Invite not found</p>
+        <Button variant="secondary" asChild>
+          <Link href="/">Back to dashboard</Link>
+        </Button>
       </div>
     )
   }

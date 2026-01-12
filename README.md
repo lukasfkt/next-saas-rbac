@@ -1,6 +1,6 @@
 # Next SaaS RBAC
 
-This project is part of the **Rocketseat course**, where we build a complete SaaS application using modern technologies with a focus on permission management.
+This project is a complete SaaS application using modern technologies with a focus on permission management.
 
 ## 🔧 Technologies Used
 
